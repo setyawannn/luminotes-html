@@ -1,0 +1,135 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../style.css" rel="stylesheet">
+  <link href="../index.css" rel="stylesheet">
+</head>
+<body>
+  <div class="font-primary max-w-xs mx-auto w-full min-h-screen flex flex-col">
+    <div class="flex-grow">
+        <div class="mt-4">
+            <a href="home.html" class="flex gap-x-2"><img src="../images/icons/arrow-back.svg" alt="arrow-back">Back</a>
+        </div>
+        <div class="mt-8">
+            <h1 class="text-2xl">Pemrograman Dasar Java - Tipe Variable</h1>
+            <div class="flex justify-between items-center mt-6">
+                <div class="flex flex-col justify-start">
+                    <div class="flex gap-x-3 items-center">
+                        <img class="w-8 h-8 rounded-full object-cover" src="../images/person/person1.png" alt="Person 1">
+                        <p>Aristoteles</p>
+                    </div>
+                    <div class="mt-4 flex gap-x-6">
+                        <div class="flex gap-x-3">
+                            <img src="../images/icons/star-filled.svg" alt="star-filled">
+                            <p>4.5</p>
+                        </div>
+                        <div class="flex gap-x-3">
+                            <img src="../images/icons/calendar-today.svg" alt="calendar-today">
+                            <p>16 Feb 24</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-col justify-center items-center">
+                    <img src="../images/icons/share.svg" alt="Share">
+                    <p class="rounded-full text-sm border-2 p-1 mt-3 w-fit text-center">Pemrograman</p>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 flex flex-col gap-y-3">
+            <img src="../images/thubmnail/java-up.png" alt="Java" class="w-full">
+            <p>Catatan ini menjelaskan tentang Konsep Casting di java beserta contoh penggunaannya.</p>
+        </div>
+                
+        <div class="flex flex-col gap-y-2 mt-6">
+            <div class="flex justify-between items-center">
+                <label for="thubmnail" class="text-lg font-medium">File Preview</label>
+                <img src="../images/icons/download.svg" alt="" class="p-2 rounded border-2">
+            </div>
+            <iframe src="../files/dummy.pdf" frameborder="0" class="w-full h-96 rounded mt-4"></iframe>
+
+        </div>
+    </div>
+    <div class="w-full flex flex-col my-4 justify-center items-center">
+        <button type="button" id="openModal" class="flex p-3 border-2 w-full rounded justify-center"><img src="../images/icons/star-filled.svg" alt=""> Rate</button>
+    </div>
+    <div id="modal" class="fixed inset-0 backdrop-blur-sm bg-white/30 hidden items-center justify-center z-50 transition-opacity duration-300 opacity-0">
+        <div class="bg-white p-6 rounded-lg shadow-lg max-w-md w-full transform transition-transform duration-300 scale-95">
+            <div class="w-full flex justify-end">
+                  <button id="closeModal" class="text-gray-500 hover:text-gray-700 text-end">
+                      <img src="../images/icons/x.svg" alt="Close Modal">
+                  </button>
+            </div>
+            <div class="flex justify-center items-center mb-4">
+              <h3 class="text-xl text-center font-medium">Rates</h3>
+            </div>
+            
+            <div class="my-10">
+              <div class="flex justify-between">
+                <img src="../images/icons/star.svg" alt="Star">
+                <img src="../images/icons/star.svg" alt="Star">
+                <img src="../images/icons/star.svg" alt="Star">
+                <img src="../images/icons/star.svg" alt="Star">
+                <img src="../images/icons/star.svg" alt="Star">
+              </div>
+            </div>
+            <div class="flex gap-x-4">
+              <button id="cancelButton" class="flex items-center justify-center w-full py-2 border-2 rounded text-black hover:bg-gray-100">Cancel</button>
+              <a href="home.html" id="confirmButton" class="w-full text-center py-2 bg-black text-white rounded">Submit</a>
+            </div>
+          </div>
+        </div>
+    </div>
+  </div>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const modal = document.getElementById('modal');
+      const modalContent = modal.querySelector('div');
+      const openModalBtn = document.getElementById('openModal');
+      const closeModalBtn = document.getElementById('closeModal');
+      const cancelBtn = document.getElementById('cancelButton');
+      
+      function openModal() {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        
+        void modal.offsetWidth;
+        
+        modal.classList.add('opacity-100');
+        modal.classList.remove('opacity-0');
+        modalContent.classList.add('scale-100');
+        modalContent.classList.remove('scale-95');
+      }
+      
+      function closeModal() {
+        modal.classList.remove('opacity-100');
+        modal.classList.add('opacity-0');
+        modalContent.classList.remove('scale-100');
+        modalContent.classList.add('scale-95');
+        
+        setTimeout(() => {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+        }, 300);
+      }
+      
+      openModalBtn.addEventListener('click', openModal);
+      closeModalBtn.addEventListener('click', closeModal);
+      cancelBtn.addEventListener('click', closeModal);
+      
+      modal.addEventListener('click', function(e) {
+        if (e.target === modal) {
+          closeModal();
+        }
+      });
+      
+      document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape' && !modal.classList.contains('hidden')) {
+          closeModal();
+        }
+      });
+    });
+  </script>
+</body>
+</html>
