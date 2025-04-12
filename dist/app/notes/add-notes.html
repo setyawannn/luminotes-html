@@ -1,0 +1,52 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../../style.css" rel="stylesheet">
+  <link href="../../index.css" rel="stylesheet">
+</head>
+<body>
+  <div class="font-primary max-w-xs mx-auto w-full min-h-screen flex flex-col">
+    <div class="flex-grow">
+        <div class="mt-4">
+            <a href="../home.html" class="flex gap-x-2"><img src="../../images/icons/arrow-back.svg" alt="arrow-back"><h3 class="text-2xl">Create</h3></a>
+        </div>
+        <div class="mt-4">
+            <form action="">
+                <div class="flex flex-col gap-y-4"> 
+                    <div class="w-full h-40 border flex flex-col justify-center items-center rounded">
+                        <h5 class="text-xl">Select File</h5>
+                        <p>File supported only .pdf max 10 MB</p>
+                        <button type="button" class="mt-4 px-2 py-1 bg-black text-white rounded">Choose File</button>
+                    </div>
+                    <input type="text" placeholder="Title" class="p-2 border w-full rounded">
+                    <textarea class="p-2 border w-full rounded">Description</textarea>
+                    <select class="p-2 border w-full rounded">
+                        <option value="">Topics</option>
+                        <option value="pemrograman">Pemrograman</option>
+                        <option value="science">Science</option>
+                        <option value="desain">Desain</option>
+                    </select>
+                    <select class="p-2 border w-full rounded">
+                        <option value="">Publication</option>
+                        <option value="public">Public</option>
+                        <option value="private">Private</option>
+                    </select>
+                    <select class="p-2 border w-full rounded">
+                        <option value="">Team</option>
+                        <option value="anaconda">Anaconda</option>
+                        <option value="kipas_angin">Kipas Angin</option>
+                        <option value="bismillah">Bismillah</option>
+                        <option value="semoga_berkah">Semoga Berkah</option>
+                    </select>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="w-full flex flex-col my-4 justify-center items-center">
+        <a class="flex p-3 border w-full rounded justify-center" href="notes-preview.html">Preview</a>
+    </div>
+  </div>
+</body>
+</html>
